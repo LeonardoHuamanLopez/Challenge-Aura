@@ -1,166 +1,79 @@
-# Challenge-Aura
-Proyecto desarrollado en el curso de Aurora Latam 
+# 🎁 Amigo Secreto
 
-[style.css](https://github.com/user-attachments/files/22505042/style.css)
-:root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
-}
+Un juego interactivo desarrollado en **HTML, CSS y JavaScript** que permite organizar de manera sencilla un sorteo de *Amigo Secreto*.  
+Podrás agregar los nombres de los participantes, eliminarlos si lo deseas y finalmente sortear de manera aleatoria un amigo secreto.  
 
-/* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+## ✨ Funcionalidades
 
-body {
-    height: 100vh;
-    background-color: var(--color-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+- **Agregar participantes**:  
+  Escribe un nombre y presiona **Añadir** o la tecla **Enter** para incluirlo en la lista.  
 
-.main-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
+- **Validación inteligente**:  
+  - No se admiten nombres vacíos.  
+  - No se permiten duplicados (la comparación no distingue mayúsculas/minúsculas).  
 
-/* Banner */
-.header-banner {
-    flex: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 0 0;
-}
+- **Gestión de lista**:  
+  - Visualización de todos los nombres añadidos.  
+  - Cada participante puede ser eliminado fácilmente con el botón **Eliminar**.  
 
-/* Sección de entrada */
-.input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-}
+- **Sorteo aleatorio**:  
+  - Presiona el botón **Sortear amigo** para obtener un nombre elegido al azar.  
+  - El resultado se muestra de manera destacada y con animación visual.  
 
-/* Títulos */
-.main-title {
-    font-size: 48px;
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
-}
+- **Accesibilidad (a11y)**:  
+  - Uso de roles ARIA y `aria-live` para que lectores de pantalla anuncien los cambios.  
+  - Botones con etiquetas y títulos descriptivos.  
 
-.section-title {
-    font-family: "Inter", serif;
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
-    text-align: center;
-}
+- **Diseño responsivo y visual atractivo**:  
+  - Estilos personalizados en **CSS**.  
+  - Uso de tipografías de Google Fonts.  
+  - Fondos e íconos incluidos en la carpeta `assets/`.  
 
-/* Contenedores de entrada y botón */
-.input-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
-}
+---
 
-.input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-}
+## 📂 Estructura del proyecto
 
-.button-container {
-    width: 300px;
-    justify-content: center;
-}
+```
+.
+├── index.html
+├── style.css
+├── app.js
+└── assets/
+    ├── amigo-secreto.png
+    └── play_circle_outline.png
+```
 
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #333;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+- **index.html** → Contiene la estructura principal de la aplicación.  
+- **style.css** → Define el estilo visual del juego.  
+- **app.js** → Contiene toda la lógica del sorteo, manejo de lista y validaciones.  
+- **assets/** → Carpeta con imágenes utilizadas como fondo e íconos.  
 
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
+---
 
-.button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
-}
+## 🚀 Cómo ejecutar el proyecto
 
-.button-add:hover {
-    background-color: #a1a1a1;
-}
+1. Descarga o clona el repositorio:  
+   ```bash
+   git clone https://github.com/tu-usuario/amigo-secreto.git
+   ```
 
-/* Listas */
-ul {
-    list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
-}
+2. Abre el archivo **index.html** en tu navegador favorito (no requiere servidor adicional).  
 
-.result-list {
-    margin-top: 15px;
-    color: #05DF05;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-}
+3. ¡Listo! Comienza a agregar los nombres de tus amigos y realiza el sorteo. 🎉  
 
-/* Botón de sortear título */
-.button-draw {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
-    font-size: 16px;
-}
+---
 
-.button-draw img {
-    margin-right: 40px;
-}
+## 🛠️ Tecnologías utilizadas
 
-.button-draw:hover {
-    background-color: var(--color-button-hover);
-}
+- **HTML5**  
+- **CSS3**  
+- **JavaScript (ES6+)**  
+
+---
+
+## 🔮 Posibles mejoras futuras
+
+- Evitar que un participante se asigne a sí mismo (modo emparejamiento real de amigo secreto).  
+- Guardar la lista de amigos en **localStorage** para que no se pierda al recargar la página.  
+- Exportar los resultados del sorteo en formatos como **CSV, TXT o PDF**.  
+- Añadir animaciones más avanzadas en el sorteo (por ejemplo, efecto de ruleta).  
